@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  userPreferences: { userName: String, boxesNumber: Number };
+  userPreferences: { userName: string, boxesNumber: number };
 
   constructor(private gameLogicService: GameLogicService, private router: Router) {
     this.userPreferences = { userName: "", boxesNumber: 0 };
