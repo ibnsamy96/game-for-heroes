@@ -11,7 +11,7 @@ export class NumberComponent implements OnInit {
 
 
 
-  questionNumber: string;
+  questionNumber!: string;
 
   constructor(private gameLogicService: GameLogicService) {
   }
