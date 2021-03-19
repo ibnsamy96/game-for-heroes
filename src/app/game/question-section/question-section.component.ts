@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { GameLogicService } from "../../shared/game-logic.service";
 
@@ -9,13 +9,13 @@ import { GameLogicService } from "../../shared/game-logic.service";
 })
 export class QuestionSectionComponent implements OnInit {
 
-  question!: { number: string, text: string };
+  @Input() question!: { number: string, text: string };
 
   constructor(private gameLogicService: GameLogicService) {
   }
 
   ngOnInit(): void {
-    this.question = this.gameLogicService.getNextQuestion()
+    // this.question = this.gameLogicService.getNextQuestion()
   }
 
 

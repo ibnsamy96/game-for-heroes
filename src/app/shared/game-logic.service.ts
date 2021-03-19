@@ -9,7 +9,15 @@ export class GameLogicService {
   private userPreferences!: { userName: String; boxesNumber: Number; };
 
   private questionsList = [
-    { number: "الأول", text: "ذلك سؤال إجابتُه هي نعم؟" }
+    {
+      number: "الأول",
+      text: "ذلك سؤال إجابتُه هي نعم؟",
+      answers:
+        [
+          { text: 'نعم', state: true },
+          { text: 'لا', state: false }
+        ]
+    }
   ]
   private nextQuestionIndex = 0;
 
@@ -25,6 +33,7 @@ export class GameLogicService {
     this.nextQuestionIndex += 1
     return nextQuestion
   }
+
 
 
   setUserPreferences(userPreferences: { userName: String; boxesNumber: Number; }) {

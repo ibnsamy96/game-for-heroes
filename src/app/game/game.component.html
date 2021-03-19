@@ -1,2 +1,3 @@
 <!-- <p>game works!</p> -->
-<app-question-section></app-question-section>
+<app-question-section [question]='{number:question.number,text:question.text}'></app-question-section>
+<app-answers-section [answers]='question.answers'></app-answers-section>

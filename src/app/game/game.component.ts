@@ -17,8 +17,11 @@ export class GameComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
+  question!: { number: string, text: string, answers: { text: string, state: boolean }[] };
 
+  ngOnInit(): void {
+    this.question = this.gameLogicService.getNextQuestion()
   }
+
 
 }
