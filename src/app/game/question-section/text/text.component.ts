@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+import { GameLogicService } from "../../../shared/game-logic.service";
 
 @Component({
   selector: 'app-text',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TextComponent implements OnInit {
 
-  constructor() { }
+
+  @Input() questionText!: string;
+
+  constructor(private gameLogicService: GameLogicService) {
+  }
 
   ngOnInit(): void {
+    // this.questionText = this.gameLogicService.getNextQuestion().text
   }
 
 }

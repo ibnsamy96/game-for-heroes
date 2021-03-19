@@ -17,7 +17,11 @@ export class GameLogicService {
   constructor() { }
 
   getNextQuestion() {
+    console.log(this.nextQuestionIndex);
+
     const nextQuestion = this.questionsList[this.nextQuestionIndex]
+    console.log(nextQuestion);
+
     this.nextQuestionIndex += 1
     return nextQuestion
   }
@@ -25,6 +29,8 @@ export class GameLogicService {
 
   setUserPreferences(userPreferences: { userName: String; boxesNumber: Number; }) {
     this.userPreferences = userPreferences
+    console.log(this.userPreferences);
+
   }
 
   getUserPreferences() {

@@ -21,6 +21,8 @@ export class LoginComponent implements OnInit {
 
 
   startGame() {
+    console.log(this.userPreferences);
+
     this.gameLogicService.setUserPreferences(this.userPreferences)
     this.router.navigate(['game'])
 

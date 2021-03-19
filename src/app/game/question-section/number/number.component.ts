@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { GameLogicService } from "../../../shared/game-logic.service";
 
@@ -11,13 +11,13 @@ export class NumberComponent implements OnInit {
 
 
 
-  questionNumber!: string;
+  @Input() questionNumber!: string;
 
   constructor(private gameLogicService: GameLogicService) {
   }
 
   ngOnInit(): void {
-    this.questionNumber = this.gameLogicService.getNextQuestion().number
+    // this.questionNumber = this.gameLogicService.getNextQuestion().number
   }
 
 }
