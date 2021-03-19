@@ -11,10 +11,12 @@ import { Router } from '@angular/router';
 export class GameComponent implements OnInit {
 
   constructor(private gameLogicService: GameLogicService, private router: Router) {
-    if (!this.gameLogicService.getUserPreferences()) {
+
+    if (!this.gameLogicService.getUserLoginState()) {
       console.log('User with no login! Routing to login page.');
       this.router.navigate([""])
     }
+
   }
 
   question!: { number: string, text: string, answers: { text: string, state: boolean }[] };
