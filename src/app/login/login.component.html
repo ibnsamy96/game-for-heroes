@@ -1,1 +1,5 @@
-<p>login works!</p>
+<h1>Welcome</h1>
+<input type="text" name="userName" placeholder="name" id="userName" required [(ngModel)]='gameInfo.userName' />
+<input type="number" name="boxesNumber" placeholder="boxesNumber" id="boxesNumber" required
+  [(ngModel)]='gameInfo.boxesNumber' />
+<button (click)="startGame()">Play</button>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { GameLogicService } from "../shared/game-logic.service";
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-game',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameComponent implements OnInit {
 
-  constructor() { }
+  constructor(private gameLogicService: GameLogicService, private router: Router) { }
 
   ngOnInit(): void {
+    if (!this.gameLogicService.gameInfo) {
+      console.log('User with no login! Routing to login page.');
+
+      this.router.navigate([""])
+    }
   }
 
 }
