@@ -13,7 +13,7 @@ export class GameComponent implements OnInit {
   constructor(private gameLogicService: GameLogicService, private router: Router) { }
 
   ngOnInit(): void {
-    if (!this.gameLogicService.gameInfo) {
+    if (!this.gameLogicService.getUserPreferences()) {
       console.log('User with no login! Routing to login page.');
 
       this.router.navigate([""])

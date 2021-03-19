@@ -10,10 +10,10 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  gameInfo: { userName: String, boxesNumber: Number };
+  userPreferences: { userName: String, boxesNumber: Number };
 
   constructor(private gameLogicService: GameLogicService, private router: Router) {
-    this.gameInfo = { userName: "", boxesNumber: 0 };
+    this.userPreferences = { userName: "", boxesNumber: 0 };
   }
 
   ngOnInit(): void {
@@ -21,9 +21,7 @@ export class LoginComponent implements OnInit {
 
 
   startGame() {
-    this.gameLogicService.gameInfo = this.gameInfo
-    console.log(this.gameInfo)
-    this.gameLogicService.logInfo()
+    this.gameLogicService.setUserPreferences(this.userPreferences)
     this.router.navigate(['game'])
 
   }
