@@ -1,0 +1,10 @@
+.answer {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: antiquewhite;
+  color: crimson;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
