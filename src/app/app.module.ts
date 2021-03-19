@@ -14,6 +14,9 @@ import { NumberComponent } from './game/question-section/number/number.component
 import { TextComponent } from './game/question-section/text/text.component';
 import { SquareComponent } from './game/board-section/square/square.component';
 import { LoginComponent } from './login/login.component';
+import { TrueAnswerDirective } from './game/answer/true-answer.directive';
+import { FalseAnswerDirective } from './game/answer/false-answer.directive';
+import { ActiveDirective } from './game/board/square/active.directive';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { LoginComponent } from './login/login.component';
     NumberComponent,
     TextComponent,
     SquareComponent,
-    LoginComponent
+    LoginComponent,
+    TrueAnswerDirective,
+    FalseAnswerDirective,
+    ActiveDirective
   ],
   imports: [
     BrowserModule,
