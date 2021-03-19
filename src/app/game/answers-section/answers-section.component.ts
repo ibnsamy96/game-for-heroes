@@ -16,13 +16,6 @@ export class AnswersSectionComponent implements OnInit {
 
   }
 
-  submitAnswer(answer: { text: string, state: boolean }) {
-    if (answer.state === true) {
-      console.log('3aaaaash!');
-    } else {
-      console.log('Nooooo!');
 
-    }
-  }
 
 }
