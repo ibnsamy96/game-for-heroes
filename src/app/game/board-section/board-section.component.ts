@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GameLogicService } from "../../shared/game-logic.service";
 
 @Component({
   selector: 'app-board-section',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoardSectionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private gameLogicService: GameLogicService) { }
+
+  squaresNumber!: number;
+  squares!: number[];
 
   ngOnInit(): void {
+    this.squaresNumber = this.gameLogicService.getSquaresNumber()
+    this.squares = Array(this.squaresNumber).fill(1)
+
   }
+
+
 
 }

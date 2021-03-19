@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class GameLogicService {
 
 
-  private userPreferences!: { userName: String; boxesNumber: Number; };
+  private userPreferences!: { userName: String; boxesNumber: number; };
 
   private questionsList = [
     {
@@ -36,15 +36,25 @@ export class GameLogicService {
 
 
 
-  setUserPreferences(userPreferences: { userName: String; boxesNumber: Number; }) {
+  setUserPreferences(userPreferences: { userName: String; boxesNumber: number; }) {
     this.userPreferences = userPreferences
     console.log(this.userPreferences);
 
   }
 
-  getUserPreferences() {
-    return this.userPreferences
+
+  getUserLoginState() {
+    return !!this.userPreferences
   }
+
+  getSquaresNumber() {
+    return this.userPreferences.boxesNumber
+  }
+
+  getUserName() {
+    return this.userPreferences.userName
+  }
+
 
 
 }
