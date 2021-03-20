@@ -11,6 +11,8 @@ app-choice {
   right: 50%;
   transform: translate(50%, -50%);
   cursor: grab;
-  /* pointer-events: none; */
+}
 
+app-choice:active {
+  cursor: grabbing;
 }
