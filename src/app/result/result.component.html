@@ -1,11 +1,15 @@
-<ng-template #userPassed [ngIf]="userInfo.result>0" [ngIfElse]="userFailed">
-  <h1>تهانينا!</h1>
-  <p>لقد أجبت عن كافة الأسئلة بصورة صحيحة إليك 50 نقطة إضافية في حسابك.</p>
-</ng-template>
-<ng-template #userFailed>
-  <h1>أوبس!</h1>
-  <p>لقد أجبت خطأً تلك المرة، و لكن المرات القادمة أكثر مما مضى فحاول من جديد.</p>
-</ng-template>
-<app-user-info></app-user-info>
-<img src="../../assets/images/Icon awesome-coins.svg" />
-<span>{{userInfo.result}}</span>
+<div class="result-page">
+  <div id="result-message-container">
+    <ng-template #userPassed [ngIf]="userInfo.result>0" [ngIfElse]="userFailed">
+      <p class="result-message">تهانينا! لقد أجبت عن كافة الأسئلة بصورة صحيحة إليك 50 نقطة إضافية في حسابك.</p>
+    </ng-template>
+    <ng-template #userFailed>
+      <p class="result-message">أوبس! لقد أجبت خطأً تلك المرة، و لكن المرات القادمة أكثر مما مضى فحاول من جديد.</p>
+    </ng-template>
+  </div>
+  <app-user-info></app-user-info>
+  <div class="user-points">
+    <img src="../../assets/images/Icon awesome-coins.svg" />
+    <span>{{userInfo.result}}</span>
+  </div>
+</div>

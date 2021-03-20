@@ -1,0 +1,29 @@
+.result-page {
+  width: 700px;
+  max-width: 90%;
+  border-radius: 70px;
+  border: solid 1px #707070;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 97px 50px;
+}
+
+
+.result-message {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#result-message-container {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.user-points {
+  margin-top: 30px;
+}
