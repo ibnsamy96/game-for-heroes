@@ -4,6 +4,17 @@
   padding: 0;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:focus {
+  box-shadow: none;
+  outline: none;
+}
+
 html,
 body {
   width: 100%;

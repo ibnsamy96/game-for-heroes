@@ -1,0 +1,109 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+select,
+button {
+  width: 40vw;
+}
+
+input,
+select {
+  border: 3px solid #79E8D8;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.16);
+  font-size: 20px;
+  padding: 15px;
+  color: cadetblue;
+  border-radius: 40px;
+}
+
+input:focus,
+input:active,
+select:focus,
+select:active,
+button:focus,
+button:active {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.16);
+}
+
+::placeholder {
+  opacity: 0.5;
+}
+
+select {
+  cursor: pointer;
+}
+
+label {
+  color: cadetblue;
+  font-size: 20px;
+  padding-right: 15px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+#select-container {
+  position: relative;
+  margin-top: 20px;
+}
+
+button {
+  margin-top: 20px;
+  border: 3px solid #79E8D8;
+  background-color: #79E8D8;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.16);
+  font-size: 20px;
+  padding: 15px;
+  color: white;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: auto;
+}
+
+@media only screen and (max-width: 1200px) {
+
+  input,
+  select,
+  button {
+    width: 50vw;
+  }
+
+
+
+}
+
+
+@media only screen and (max-width: 800px) {
+
+  input,
+  select,
+  button {
+    width: 65vw;
+  }
+
+
+
+}
+
+
+@media only screen and (max-width: 600px) {
+
+  input,
+  select,
+  button {
+    width: 80vw;
+  }
+
+
+
+}

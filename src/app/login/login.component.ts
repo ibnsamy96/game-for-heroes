@@ -11,20 +11,25 @@ import { UserPreferences } from "../shared/created-types.interface";
 })
 export class LoginComponent implements OnInit {
 
-  userPreferences: UserPreferences;
 
   constructor(private gameLogicService: GameLogicService, private router: Router) {
-    this.userPreferences = { userName: "", boxesNumber: "2" };
   }
 
   ngOnInit(): void {
   }
 
+  isSelectHasValue: undefined | string;
 
-  startGame() {
-    console.log(this.userPreferences);
 
-    this.gameLogicService.setUserPreferences(this.userPreferences)
+  startGame(formFields: { userName: string, boxesNumber: string }) {
+
+    const userPreferences: UserPreferences = {
+      userName: formFields.userName,
+      boxesNumber: parseInt(formFields.boxesNumber.toString())
+    }
+
+    this.gameLogicService.setUserPreferences(userPreferences)
+
     this.router.navigate(['game'])
 
   }

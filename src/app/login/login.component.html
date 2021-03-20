@@ -1,10 +1,23 @@
-<h1>Welcome</h1>
-<input type="text" name="userName" placeholder="name" id="userName" required [(ngModel)]='userPreferences.userName' />
-<select id="boxesNumber" required name="boxesNumber" [(ngModel)]='userPreferences.boxesNumber'>
-  <option value="2">مربعين</option>
-  <option value="4">4 مربعات</option>
-  <option value="6">6 مربعات</option>
-  <option value="8">8 مربعات</option>
-  <option value="10">8 مربعات</option>
-</select>
-<button (click)="startGame()">Play</button>
+<form #myForm="ngForm" (ngSubmit)="startGame(myForm.value)">
+  <input type="text" class="secondary-font" name="userName" placeholder="اسمك" id="userName" required ngModel />
+  <div id="select-container">
+    <label *ngIf="!isSelectHasValue" class="secondary-font" for="boxesNumber">مستوى اللعب</label>
+    <select class="secondary-font" id="boxesNumber" required placeholder="عدد المربعات المناسبة" name="boxesNumber"
+      [(ngModel)]='isSelectHasValue'>
+      <optgroup label="المستوى الأسهل">
+        <option value="2" [selected]='default'>مربعين</option>
+        <option class="secondary-font" value="4">4 مربعات</option>
+        <option value="6">6 مربعات</option>
+      <optgroup label="المستوى المتوسط">
+        <option value="8">8 مربعات</option>
+        <option value="10">9 مربعات</option>
+      </optgroup>
+      <optgroup label="المستوى الاصعب">
+        <option value="9">10 مربعات</option>
+        <option value="12">12 مربع</option>
+        <option value="15">15 مربع</option>
+      </optgroup>
+    </select>
+  </div>
+  <button class="primary-font" [disabled]="!myForm.valid" type="submit">ابدأ اللعب</button>
+</form>
