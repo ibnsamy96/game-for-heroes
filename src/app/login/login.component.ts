@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   userPreferences: UserPreferences;
 
   constructor(private gameLogicService: GameLogicService, private router: Router) {
-    this.userPreferences = { userName: "", boxesNumber: 0 };
+    this.userPreferences = { userName: "", boxesNumber: "2" };
   }
 
   ngOnInit(): void {

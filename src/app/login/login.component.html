@@ -1,5 +1,10 @@
 <h1>Welcome</h1>
 <input type="text" name="userName" placeholder="name" id="userName" required [(ngModel)]='userPreferences.userName' />
-<input type="number" name="boxesNumber" placeholder="boxesNumber" id="boxesNumber" required
-  [(ngModel)]='userPreferences.boxesNumber' />
+<select id="boxesNumber" required name="boxesNumber" [(ngModel)]='userPreferences.boxesNumber'>
+  <option value="2">مربعين</option>
+  <option value="4">4 مربعات</option>
+  <option value="6">6 مربعات</option>
+  <option value="8">8 مربعات</option>
+  <option value="10">8 مربعات</option>
+</select>
 <button (click)="startGame()">Play</button>
