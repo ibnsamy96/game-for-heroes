@@ -13,7 +13,6 @@ export class BoardSectionComponent implements OnInit {
   squaresNumber!: number;
   squares!: (boolean | number)[];
 
-  randNumber: number = 0
 
   ngOnInit(): void {
 
@@ -25,14 +24,4 @@ export class BoardSectionComponent implements OnInit {
 
   }
 
-  activateLight() {
-    if (this.randNumber % 2 === 0) {
-      this.randNumber++
-      return true
-    } else {
-      this.randNumber++
-      return false
-    }
-
-  }
 }
