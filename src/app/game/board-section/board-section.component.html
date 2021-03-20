@@ -1,2 +1,12 @@
-<app-square *ngFor="let square of squares;let squareIndex = index" [squareState]="square"
-  [class]="squareIndex%2===0?'dark-square dark-square-text':'light-square light-square-text'"></app-square>
+<div *ngFor="let row of squaresRows;let rowIndex = index">
+  <div class="squares-row" *ngIf="rowIndex%2===0">
+    <app-square *ngFor="let square of row;let squareIndex = index" [squareState]="square"
+      [class]="squareIndex%2===0?'dark-square dark-square-text':'light-square light-square-text'">
+    </app-square>
+  </div>
+  <div class="squares-row" *ngIf="rowIndex%2!==0">
+    <app-square *ngFor="let square of row;let squareIndex = index" [squareState]="square"
+      [class]="squareIndex%2===0?'light-square light-square-text':'dark-square dark-square-text'">
+    </app-square>
+  </div>
+</div>

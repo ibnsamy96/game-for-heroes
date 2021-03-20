@@ -1,3 +1,7 @@
+:host {
+  background-color: inherit;
+}
+
 .square {
   width: 150px;
   height: 150px;
@@ -5,6 +9,7 @@
   align-items: center;
   justify-content: center;
   text-align: left;
+  background-color: inherit;
 }
 
 
