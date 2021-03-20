@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
+import { QuestionType, UserPreferences } from "./created-types.interface";
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class GameLogicService {
 
-
-  private userPreferences!: { userName: string; boxesNumber: number; };
+  private userPreferences!: UserPreferences;
 
   private userResult = 0;
 
-  private questionsList = [
+  private questionsList: QuestionType[] = [
     {
       number: "الأول",
       text: "ذلك سؤال إجابتُه هي نعم؟",
@@ -26,7 +27,7 @@ export class GameLogicService {
 
   constructor() { }
 
-  getNextQuestion() {
+  getNextQuestion(): QuestionType {
     console.log(this.nextQuestionIndex);
 
     const nextQuestion = this.questionsList[this.nextQuestionIndex]
@@ -38,32 +39,32 @@ export class GameLogicService {
 
 
 
-  setUserPreferences(userPreferences: { userName: string; boxesNumber: number; }) {
+  setUserPreferences(userPreferences: UserPreferences) {
     this.userPreferences = userPreferences
     console.log(this.userPreferences);
 
   }
 
 
-  getUserLoginState() {
+  getUserLoginState(): boolean {
     return !!this.userPreferences
   }
 
-  getSquaresNumber() {
+  getSquaresNumber(): number {
     return this.userPreferences.boxesNumber
   }
 
-  getUserName() {
+  getUserName(): string {
     console.log(this.userPreferences.userName);
 
     return this.userPreferences.userName
   }
 
-  getUserResult() {
+  getUserResult(): number {
     return this.userResult
   }
 
-  addRightAnswerToResult() {
+  addRightAnswerToResult(): void {
     this.userResult += 50
   }
 

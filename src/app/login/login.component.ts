@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GameLogicService } from "../shared/game-logic.service";
 import { Router } from '@angular/router';
+import { UserPreferences } from "../shared/created-types.interface";
 
 
 @Component({
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  userPreferences: { userName: string, boxesNumber: number };
+  userPreferences: UserPreferences;
 
   constructor(private gameLogicService: GameLogicService, private router: Router) {
     this.userPreferences = { userName: "", boxesNumber: 0 };

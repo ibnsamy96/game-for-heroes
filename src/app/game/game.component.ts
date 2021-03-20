@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GameLogicService } from "../shared/game-logic.service";
 import { Router } from '@angular/router';
+import { QuestionType } from "../shared/created-types.interface";
 
 
 @Component({
@@ -19,7 +20,7 @@ export class GameComponent implements OnInit {
 
   }
 
-  question!: { number: string, text: string, answers: { text: string, state: boolean }[] };
+  question!: QuestionType;
 
   ngOnInit(): void {
     this.question = this.gameLogicService.getNextQuestion()
