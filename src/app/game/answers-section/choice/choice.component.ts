@@ -11,5 +11,4 @@ export class ChoiceComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

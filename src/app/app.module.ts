@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ResultComponent } from './result/result.component';
@@ -18,6 +19,8 @@ import { TrueAnswerDirective } from './game/answers-section/answer/true-answer.d
 import { ActiveDirective } from './game/board-section/square/active.directive';
 import { FormsModule } from '@angular/forms';
 import { UserInfoComponent } from './shared/user-info/user-info.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DragDropModule } from "@angular/cdk/drag-drop";
 
 @NgModule({
   declarations: [
@@ -40,7 +43,9 @@ import { UserInfoComponent } from './shared/user-info/user-info.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
