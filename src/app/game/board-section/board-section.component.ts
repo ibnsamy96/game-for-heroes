@@ -28,11 +28,14 @@ export class BoardSectionComponent implements OnInit {
     const randomQuestionSquareLocation = Math.floor(Math.random() * this.squaresNumber);
     this.squares[randomQuestionSquareLocation] = 1
 
-    if ([2, 10].includes(this.squaresNumber)) {
+    if ([2].includes(this.squaresNumber)) {
       elementsNumberPerArray = 2
-      this.spliceArray(2, this.squares)
-    } else if ([6, 9, 12, 15].includes(this.squaresNumber)) {
+    } else if ([6, 9].includes(this.squaresNumber)) {
       elementsNumberPerArray = 3
+    } else if ([12].includes(this.squaresNumber)) {
+      elementsNumberPerArray = 4
+    } else if ([10, 15].includes(this.squaresNumber)) {
+      elementsNumberPerArray = 5
     }
 
     this.squaresRows = this.spliceArray(elementsNumberPerArray, this.squares)
