@@ -19,7 +19,8 @@ export class GameLogicService {
         [
           { text: 'نعم', state: true },
           { text: 'لا', state: false }
-        ]
+        ],
+      userAnswerState: undefined
     }
   ]
   private nextQuestionIndex = 0;
@@ -55,8 +56,6 @@ export class GameLogicService {
   }
 
   getUserName(): string {
-    console.log(this.userPreferences.userName);
-
     return this.userPreferences.userName
   }
 
