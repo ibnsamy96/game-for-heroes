@@ -8,6 +8,8 @@ export class GameLogicService {
 
   private userPreferences!: { userName: string; boxesNumber: number; };
 
+  private userResult = 0;
+
   private questionsList = [
     {
       number: "الأول",
@@ -52,7 +54,17 @@ export class GameLogicService {
   }
 
   getUserName() {
+    console.log(this.userPreferences.userName);
+
     return this.userPreferences.userName
+  }
+
+  getUserResult() {
+    return this.userResult
+  }
+
+  addRightAnswerToResult() {
+    this.userResult += 50
   }
 
 

@@ -1,1 +1,11 @@
-<p>result works!</p>
+<ng-template #userPassed [ngIf]="userInfo.result>0" [ngIfElse]="userFailed">
+  <h1>تهانينا!</h1>
+  <p>لقد أجبت عن كافة الأسئلة بصورة صحيحة إليك 50 نقطة إضافية في حسابك.</p>
+</ng-template>
+<ng-template #userFailed>
+  <h1>أوبس!</h1>
+  <p>لقد أجبت خطأً تلك المرة، و لكن المرات القادمة أكثر مما مضى فحاول من جديد.</p>
+</ng-template>
+<app-user-info></app-user-info>
+<img src="../../assets/images/Icon awesome-coins.svg" />
+<span>{{userInfo.result}}</span>

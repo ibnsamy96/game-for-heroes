@@ -17,6 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { TrueAnswerDirective } from './game/answers-section/answer/true-answer.directive';
 import { ActiveDirective } from './game/board-section/square/active.directive';
 import { FormsModule } from '@angular/forms';
+import { UserInfoComponent } from './shared/user-info/user-info.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FormsModule } from '@angular/forms';
     SquareComponent,
     LoginComponent,
     TrueAnswerDirective,
-    ActiveDirective
+    ActiveDirective,
+    UserInfoComponent
   ],
   imports: [
     BrowserModule,
