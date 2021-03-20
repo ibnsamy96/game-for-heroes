@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GameLogicService } from "../game-logic.service";
 
 @Component({
   selector: 'app-user-info',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-info.component.css']
 })
 export class UserInfoComponent implements OnInit {
+  userName!: string;
 
-  constructor() { }
+  constructor(private gameLogicService: GameLogicService) { }
 
   ngOnInit(): void {
+    this.userName = this.gameLogicService.getUserName()
   }
 
 }
