@@ -26,4 +26,14 @@
 
 .user-points {
   margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  min-width: fit-content;
+}
+
+.user-points div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
