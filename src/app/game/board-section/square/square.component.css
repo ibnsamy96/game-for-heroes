@@ -1,7 +1,15 @@
 .square {
-  width: 100px;
-  height: 100px;
-  background-color: bisque;
-  border: 1px solid brown;
-  /* display: inline-block; */
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: left;
+}
+
+
+
+span {
+  font-size: 25px;
 }

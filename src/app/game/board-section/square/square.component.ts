@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SquareComponent implements OnInit {
 
-  @Input() squareState!: boolean;
+  @Input() squareState!: number | boolean;
 
   constructor() { }
 

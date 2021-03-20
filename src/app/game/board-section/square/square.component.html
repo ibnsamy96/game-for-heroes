@@ -1,4 +1,7 @@
 <div class="square">
-  <app-user-info *ngIf="squareState"></app-user-info>
-  <!-- <img src="../../../../assets/images/Icon awesome-check.svg" alt=""> -->
+  <div *ngIf="squareState">
+    <span class="primary-font"> {{squareState}} </span>
+    <app-user-info></app-user-info>
+    <!-- <img src="../../../../assets/images/Icon awesome-check.svg" alt=""> -->
+  </div>
 </div>
