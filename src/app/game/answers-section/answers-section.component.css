@@ -10,5 +10,7 @@ app-choice {
   top: 50%;
   right: 50%;
   transform: translate(50%, -50%);
-  cursor: grab
+  cursor: grab;
+  /* pointer-events: none; */
+
 }
