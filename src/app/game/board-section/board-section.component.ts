@@ -11,17 +11,28 @@ export class BoardSectionComponent implements OnInit {
   constructor(private gameLogicService: GameLogicService) { }
 
   squaresNumber!: number;
-  squares!: boolean[];
+  squares!: (boolean | number)[];
+
+  randNumber: number = 0
 
   ngOnInit(): void {
+
     this.squaresNumber = this.gameLogicService.getSquaresNumber()
     this.squares = Array(this.squaresNumber).fill(false)
     const randomQuestionSquareLocation = Math.floor(Math.random() * this.squaresNumber);
-    this.squares[randomQuestionSquareLocation] = true
+    this.squares[randomQuestionSquareLocation] = 1
     console.log(this.squares);
 
   }
 
+  activateLight() {
+    if (this.randNumber % 2 === 0) {
+      this.randNumber++
+      return true
+    } else {
+      this.randNumber++
+      return false
+    }
 
-
+  }
 }

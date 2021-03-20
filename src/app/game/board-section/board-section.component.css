@@ -2,3 +2,20 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+
+.dark-square {
+  background-color: #79E8D8;
+}
+
+.light-square {
+  background-color: #CBFFFB;
+}
+
+.dark-square-text {
+  color: #CBFFFB;
+}
+
+.light-square-square {
+  color: #79E8D8;
+}

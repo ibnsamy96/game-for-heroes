@@ -1,1 +1,2 @@
-<app-square *ngFor="let square of squares" [squareState]="square"></app-square>
+<app-square *ngFor="let square of squares" [squareState]="square"
+  [class]="activateLight()?'dark-square dark-square-text':'light-square light-square-text'"></app-square>
