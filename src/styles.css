@@ -3,3 +3,25 @@
   margin: 0;
   padding: 0;
 }
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.primary-font {
+  font-family: 'Cairo', sans-serif;
+}
+
+.secondary-font {
+  font-family: 'Poppins', sans-serif;
+}
+
+.normal-font {
+  font-weight: normal;
+}
+
+.bold-font {
+  font-weight: bold;
+}

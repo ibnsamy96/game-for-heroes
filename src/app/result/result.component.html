@@ -1,17 +1,19 @@
 <div class="result-page">
   <div id="result-message-container">
     <ng-template #userPassed [ngIf]="userInfo.result>0" [ngIfElse]="userFailed">
-      <p class="result-message">تهانينا! لقد أجبت عن كافة الأسئلة بصورة صحيحة إليك 50 نقطة إضافية في حسابك.</p>
+      <p class="result-message primary-font">تهانينا! لقد أجبت عن كافة الأسئلة بصورة صحيحة إليك 50 نقطة إضافية في حسابك.
+      </p>
     </ng-template>
     <ng-template #userFailed>
-      <p class="result-message">أوبس! لقد أجبت خطأً تلك المرة، و لكن المرات القادمة أكثر مما مضى فحاول من جديد.</p>
+      <p class="result-message primary-font">أوبس! لقد أجبت خطأً تلك المرة، و لكن المرات القادمة أكثر مما مضى فحاول من
+        جديد.</p>
     </ng-template>
   </div>
   <app-user-info></app-user-info>
   <div class="user-points">
     <div>
-      <span>{{userInfo.result}}</span>
-      <span>نقطة</span>
+      <span class="secondary-font bold-font">{{userInfo.result}}</span>
+      <span class="secondary-font bold-font">نقطة</span>
     </div>
     <img src="../../assets/images/Icon awesome-coins.svg" />
   </div>
