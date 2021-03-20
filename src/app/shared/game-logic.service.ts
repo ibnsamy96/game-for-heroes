@@ -14,7 +14,7 @@ export class GameLogicService {
   private questionsList: QuestionType[] = [
     {
       number: "الأول",
-      text: "ذلك سؤال إجابتُه هي نعم؟",
+      text: "هل مصر دولة عربية؟",
       answers:
         [
           { text: 'نعم', state: true },
