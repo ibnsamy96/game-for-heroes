@@ -1,2 +1,2 @@
 <!-- <button (click)="submitAnswer()">{{answer.text}}</button> -->
-<div class="answer" (click)="submitAnswer()">{{answer.text}}</div>
+<div class="answer" [ngClass]="{'right-answer':answer.state}" (click)="submitAnswer()">{{answer.text}}</div>
