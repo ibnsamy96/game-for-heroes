@@ -3,16 +3,18 @@
 }
 
 .square {
-  width: 150px;
-  /* height: 150px; */
+  --squareMainLength: 150px;
+  --squareMaxLength: calc(100vw/5);
+  width: var(--squareMainLength);
+  height: var(--squareMainLength);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: left;
   background-color: inherit;
-  max-width: calc(100vw/5);
+  max-width: var(--squareMaxLength);
+  max-height: var(--squareMaxLength);
   overflow: hidden;
-  aspect-ratio: 1 / 1;
 }
 
 
