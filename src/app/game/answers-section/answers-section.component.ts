@@ -8,7 +8,7 @@ import { ChoiceComponent } from "./choice/choice.component";
 })
 export class AnswersSectionComponent implements OnInit {
 
-  @ViewChild('choice') choice: ElementRef;
+  // @ViewChild('choice') choice: ElementRef;
 
 
   constructor(private elRef: ElementRef) { }
@@ -21,9 +21,9 @@ export class AnswersSectionComponent implements OnInit {
 
   move(ref: ElementRef) {
 
-    const { x, y } = this.choice.nativeElement.getBoundingClientRect();
+    // const { x, y } = this.choice.nativeElement.getBoundingClientRect();
 
-    console.log(x, y);
+    // console.log(x, y);
   }
 
 }
