@@ -8,15 +8,22 @@ import { ChoiceComponent } from "./choice/choice.component";
 })
 export class AnswersSectionComponent implements OnInit {
 
-  // @ViewChild('app-choice') appChoice!: ChoiceComponent;
+  @ViewChild('choice') choice: ElementRef;
 
 
-  constructor() { }
+  constructor(private elRef: ElementRef) { }
 
   @Input() answers!: { text: string, state: boolean }[];
 
   ngOnInit(): void {
     console.log(this.answers);
+  }
+
+  move(ref: ElementRef) {
+
+    const { x, y } = this.choice.nativeElement.getBoundingClientRect();
+
+    console.log(x, y);
   }
 
 }
