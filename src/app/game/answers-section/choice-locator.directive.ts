@@ -7,7 +7,7 @@ export class ChoiceLocator implements OnInit {
 
   constructor(private elementRef: ElementRef) { }
 
-  @Output() locationUpdate = new EventEmitter<{}>()
+  @Output() locationUpdate = new EventEmitter<{ xCord: number, yCord: number, diameter: number, element: HTMLElement }>()
 
   ngOnInit() {
   }
@@ -20,7 +20,7 @@ export class ChoiceLocator implements OnInit {
     const circleWidth = this.elementRef.nativeElement.getBoundingClientRect().width
     const circleHeight = this.elementRef.nativeElement.getBoundingClientRect().height
 
-    const centerLocation = { xCord: undefined, yCord: undefined, diameter: undefined, element: undefined }
+    let centerLocation!: { xCord: number, yCord: number, diameter: number, element: HTMLElement }
     centerLocation.xCord = circleLeft + (circleWidth / 2)
     centerLocation.yCord = circleTop + (circleHeight / 2)
     centerLocation.diameter = this.elementRef.nativeElement.getBoundingClientRect().width
