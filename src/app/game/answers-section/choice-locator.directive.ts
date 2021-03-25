@@ -20,11 +20,14 @@ export class ChoiceLocator implements OnInit {
     const circleWidth = this.elementRef.nativeElement.getBoundingClientRect().width
     const circleHeight = this.elementRef.nativeElement.getBoundingClientRect().height
 
-    let centerLocation!: { xCord: number, yCord: number, diameter: number, element: HTMLElement }
+    const centerLocation = { xCord: 0, yCord: 0, diameter: 0, element: this.elementRef.nativeElement };
+
+    console.log(centerLocation);
+
+
     centerLocation.xCord = circleLeft + (circleWidth / 2)
     centerLocation.yCord = circleTop + (circleHeight / 2)
     centerLocation.diameter = this.elementRef.nativeElement.getBoundingClientRect().width
-    centerLocation.element = this.elementRef.nativeElement;
 
     this.locationUpdate.emit(centerLocation)
 
