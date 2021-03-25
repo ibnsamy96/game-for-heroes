@@ -1,5 +1,6 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { ChoiceComponent } from "./choice/choice.component";
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { GameLogicService } from "../../shared/game-logic.service";
 
 @Component({
   selector: 'app-answers-section',
@@ -8,10 +9,9 @@ import { ChoiceComponent } from "./choice/choice.component";
 })
 export class AnswersSectionComponent implements OnInit {
 
-  // @ViewChild('choice') choice: ElementRef;
+  answersCentersLocations: { xCord: number, yCord: number, diameter: number, element: HTMLElement }[] = [];
 
-
-  constructor(private elRef: ElementRef) { }
+  constructor(private gameLogicService: GameLogicService, private router: Router) { }
 
   @Input() answers!: { text: string, state: boolean }[];
 
@@ -19,11 +19,35 @@ export class AnswersSectionComponent implements OnInit {
     console.log(this.answers);
   }
 
-  move(ref: ElementRef) {
-
-    // const { x, y } = this.choice.nativeElement.getBoundingClientRect();
-
-    // console.log(x, y);
+  addAnswer(centerLocation: { xCord: number, yCord: number, diameter: number, element: HTMLElement }) {
+    this.answersCentersLocations.push(centerLocation)
   }
+
+  checkChoiceLocation(centerLocation: { xCord: number, yCord: number, diameter: number, element: HTMLElement }): void {
+
+    const chosenAnswerElement = this.answersCentersLocations.find((answerCenterLocation) => {
+      const choiceXCenter = centerLocation.xCord
+      const choiceYCenter = centerLocation.yCord
+
+      const answerXStart = answerCenterLocation.xCord - (answerCenterLocation.diameter / 2)
+      const answerYStart = answerCenterLocation.yCord - (answerCenterLocation.diameter / 2)
+
+      const answerXEnd = answerCenterLocation.xCord + (answerCenterLocation.diameter / 2)
+      const answerYEnd = answerCenterLocation.yCord + (answerCenterLocation.diameter / 2)
+
+      return (choiceXCenter > answerXStart && choiceXCenter < answerXEnd) && (choiceYCenter > answerYStart && choiceYCenter < answerYEnd)
+    })
+
+
+    const chosenAnswerText = chosenAnswerElement?.element.innerText
+
+    console.log(chosenAnswerText);
+
+    if (chosenAnswerText) {
+      this.gameLogicService.submitAnswer(chosenAnswerText)
+      this.router.navigate(['result'])
+    }
+  }
+
 
 }

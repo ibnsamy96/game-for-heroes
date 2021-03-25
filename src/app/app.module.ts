@@ -21,6 +21,8 @@ import { FormsModule } from '@angular/forms';
 import { UserInfoComponent } from './shared/user-info/user-info.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from "@angular/cdk/drag-drop";
+import { ChoiceLocator } from './game/answers-section/choice-locator.directive';
+import { AnswerLocatorDirective } from './game/answers-section/answer-locator.directive';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { DragDropModule } from "@angular/cdk/drag-drop";
     LoginComponent,
     TrueAnswerDirective,
     ActiveDirective,
-    UserInfoComponent
+    UserInfoComponent,
+    ChoiceLocator,
+    AnswerLocatorDirective
   ],
   imports: [
     BrowserModule,

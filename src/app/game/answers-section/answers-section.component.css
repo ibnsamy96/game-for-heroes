@@ -1,4 +1,4 @@
-:host {
+.container {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -6,12 +6,12 @@
 }
 
 app-choice {
-  position: absolute;
+  /* position: absolute; */
   /* top: 50%; */
-  right: 50%;
-  transform: translate(50%);
+  /* right: 50%; */
+  /* transform: translate(50%); */
   cursor: grab;
-  z-index: 1;
+  z-index: 3;
 }
 
 app-choice:active {

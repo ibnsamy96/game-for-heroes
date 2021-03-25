@@ -67,6 +67,17 @@ export class GameLogicService {
     this.userResult += 50
   }
 
+  submitAnswer(answerText: string): void {
+    const chosenAnswer = this.questionsList[0].answers.find((answer) => answerText === answer.text)
+
+    if (chosenAnswer?.state) {
+      this.addRightAnswerToResult()
+      console.log('3aaaaash!');
+    } else {
+      console.log('Nooooo!');
+    }
+  }
+
 
 
 }

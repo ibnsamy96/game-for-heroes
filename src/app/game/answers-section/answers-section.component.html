@@ -1,2 +1,17 @@
-  <app-answer *ngFor="let answer of answers" [answer]="answer"></app-answer>
-  <!-- <app-choice #choice id="choice" (click)="move()" cdkDragLockAxis="x" cdkDrag></app-choice> -->
+<div class="container">
+  <app-answer class="answer" [answer]="{ text: 'نعم', state: true }" answerLocator (locationUpdate)="addAnswer($event)">
+  </app-answer>
+  <app-choice choiceLocator #choice class="choice" cdkDragBoundary=".container"
+    (locationUpdate)="checkChoiceLocation($event)" cdkDrag>
+  </app-choice>
+  <app-answer class="answer" [answer]="{ text: 'لا', state: true }" answerLocator (locationUpdate)="addAnswer($event)">
+  </app-answer>
+</div>
+<!--
+<div class="container">
+  <app-choice choiceLocator #choice class="choice" cdkDragBoundary=".container"
+    (locationUpdate)="checkChoiceLocation($event)" cdkDrag>
+  </app-choice>
+  <app-answer class="answer" *ngFor="let answer of answers" [answer]="answer" answerLocator
+    (locationUpdate)="addAnswer($event)"></app-answer>
+</div> -->
