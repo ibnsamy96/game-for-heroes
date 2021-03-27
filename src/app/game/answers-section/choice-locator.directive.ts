@@ -12,7 +12,8 @@ export class ChoiceLocator implements OnInit {
   ngOnInit() {
   }
 
-  @HostListener('mouseup') locationUpdated() {
+
+  @HostListener('cdkDragEnded') locationUpdated() {
     console.log(this.elementRef.nativeElement.getBoundingClientRect());
 
     const circleLeft = this.elementRef.nativeElement.getBoundingClientRect().left

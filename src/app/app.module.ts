@@ -19,7 +19,6 @@ import { TrueAnswerDirective } from './game/answers-section/answer/true-answer.d
 import { ActiveDirective } from './game/board-section/square/active.directive';
 import { FormsModule } from '@angular/forms';
 import { UserInfoComponent } from './shared/user-info/user-info.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { ChoiceLocator } from './game/answers-section/choice-locator.directive';
 import { AnswerLocatorDirective } from './game/answers-section/answer-locator.directive';
@@ -48,7 +47,7 @@ import { AnswerLocatorDirective } from './game/answers-section/answer-locator.di
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule,
+
     DragDropModule
   ],
   providers: [],
