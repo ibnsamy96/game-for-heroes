@@ -17,6 +17,7 @@
   align-items: center;
   box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.1);
   border: 3px solid #79E8D8;
+  transition: background-color 200ms, border-color 200ms, color 200ms;
 
   /* cursor: pointer; */
 

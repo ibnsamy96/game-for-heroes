@@ -70,12 +70,14 @@ export class AnswersSectionComponent implements OnInit {
 
 
     if (chosenAnswerElement?.element.firstElementChild !== this.lastChosenAnswerCircle) {
+      console.log(chosenAnswerElement);
+
       if (this.lastChosenAnswerCircle) {
         this.render.setStyle(this.lastChosenAnswerCircle, 'background-color', 'transparent')
         this.render.setStyle(this.lastChosenAnswerCircle, 'border-color', '#79E8D8')
         this.render.setStyle(this.lastChosenAnswerCircle, 'color', '#79E8D8')
-
       }
+
       if (chosenAnswerElement) {
         this.lastChosenAnswerCircle = chosenAnswerElement?.element.firstElementChild
         this.render.setStyle(this.lastChosenAnswerCircle, 'background-color', '#B53A57')
