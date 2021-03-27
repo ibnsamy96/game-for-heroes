@@ -46,9 +46,8 @@ export class AnswersSectionComponent implements OnInit {
   }
 
 
-
-
-  lastChosenAnswerCircle: Element | null | undefined;
+  lastChosenAnswerCircle: Element | null | undefined; // variable holds the last chosen answer
+  isOutOfAnswers: boolean = true // boolean indicates that the choice is out of all of the answers
 
   checkChoiceLocation(centerLocation: { xCord: number, yCord: number, diameter: number, element: HTMLElement }): void {
 
@@ -67,26 +66,26 @@ export class AnswersSectionComponent implements OnInit {
 
     })
 
-
-
-    if (chosenAnswerElement?.element.firstElementChild !== this.lastChosenAnswerCircle) {
-      console.log(chosenAnswerElement);
-
-      if (this.lastChosenAnswerCircle) {
-        this.render.setStyle(this.lastChosenAnswerCircle, 'background-color', 'transparent')
-        this.render.setStyle(this.lastChosenAnswerCircle, 'border-color', '#79E8D8')
-        this.render.setStyle(this.lastChosenAnswerCircle, 'color', '#79E8D8')
-      }
-
-      if (chosenAnswerElement) {
-        this.lastChosenAnswerCircle = chosenAnswerElement?.element.firstElementChild
-        this.render.setStyle(this.lastChosenAnswerCircle, 'background-color', '#B53A57')
-        this.render.setStyle(this.lastChosenAnswerCircle, 'border-color', '#B53A57')
-        this.render.setStyle(this.lastChosenAnswerCircle, 'color', 'white')
-
-        console.log(this.lastChosenAnswerCircle);
-      }
+    if (this.isOutOfAnswers && this.lastChosenAnswerCircle) {
+      this.render.setStyle(this.lastChosenAnswerCircle, 'background-color', 'transparent')
+      this.render.setStyle(this.lastChosenAnswerCircle, 'border-color', '#79E8D8')
+      this.render.setStyle(this.lastChosenAnswerCircle, 'color', '#79E8D8')
+      this.lastChosenAnswerCircle = undefined
     }
+
+    if (chosenAnswerElement?.element.firstElementChild) {
+      this.isOutOfAnswers = false
+
+      this.lastChosenAnswerCircle = chosenAnswerElement?.element.firstElementChild
+      this.render.setStyle(this.lastChosenAnswerCircle, 'background-color', '#B53A57')
+      this.render.setStyle(this.lastChosenAnswerCircle, 'border-color', '#B53A57')
+      this.render.setStyle(this.lastChosenAnswerCircle, 'color', 'white')
+
+    } else {
+      this.isOutOfAnswers = true
+    }
+
+
 
   }
 

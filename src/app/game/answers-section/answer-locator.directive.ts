@@ -33,7 +33,6 @@ export class AnswerLocatorDirective implements AfterContentInit {
     centerLocation.diameter = this.elementRef.nativeElement.getBoundingClientRect().width
 
     this.locationUpdate.emit(centerLocation)
-
   }
 
 }
