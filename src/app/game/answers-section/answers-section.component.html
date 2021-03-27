@@ -2,7 +2,8 @@
   <app-answer class="answer" [answer]="{ text: 'نعم', state: true }" answerLocator (locationUpdate)="addAnswer($event)">
   </app-answer>
   <app-choice choiceLocator #choice class="choice" cdkDragBoundary=".container"
-    (locationUpdate)="checkChoiceLocation($event)" cdkDrag>
+    (locationUpdateForTheLastTime)="checkLastChoiceLocation($event)" (locationUpdate)="checkChoiceLocation($event)"
+    cdkDrag>
   </app-choice>
   <app-answer class="answer" [answer]="{ text: 'لا', state: true }" answerLocator (locationUpdate)="addAnswer($event)">
   </app-answer>
