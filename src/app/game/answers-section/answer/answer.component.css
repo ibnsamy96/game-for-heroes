@@ -16,18 +16,18 @@
   box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.1);
   border: 3px solid #79E8D8;
 
-  cursor: pointer;
+  /* cursor: pointer; */
 
 }
 
 .answer:hover {
   /* color:   ; */
-  border: 3px solid #B53A57;
-  background-color: #B53A57;
+  /* border: 3px solid #B53A57;
+  background-color: #B53A57; */
 }
 
 .answer.right-answer:hover {
   /* color:   ; */
-  border: 3px solid #0B4D3D !important;
-  background-color: #0B4D3D !important;
+  /* border: 3px solid #0B4D3D !important;
+  background-color: #0B4D3D !important; */
 }

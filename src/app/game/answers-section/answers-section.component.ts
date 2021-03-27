@@ -38,20 +38,17 @@ export class AnswersSectionComponent implements OnInit {
       return (choiceXCenter > answerXStart && choiceXCenter < answerXEnd) && (choiceYCenter > answerYStart && choiceYCenter < answerYEnd)
     })
 
-    this.render.setStyle(chosenAnswerElement?.element, 'background-color', 'red')
-    // chosenAnswerElement?.element.style.backgroundColor = 'red'
-
-    const chosenAnswerText = chosenAnswerElement?.element.innerText
-
-    console.log(chosenAnswerText);
-
-    if (chosenAnswerText) {
+    if (chosenAnswerElement) {
+      const chosenAnswerText = chosenAnswerElement.element.innerText
       this.gameLogicService.submitAnswer(chosenAnswerText)
       this.router.navigate(['result'])
     }
   }
 
-  lastChosenAnswerCircle!: Element | null | undefined;
+
+
+
+  lastChosenAnswerCircle: Element | null | undefined;
 
   checkChoiceLocation(centerLocation: { xCord: number, yCord: number, diameter: number, element: HTMLElement }): void {
 
@@ -70,12 +67,19 @@ export class AnswersSectionComponent implements OnInit {
 
     })
 
+
+
     if (chosenAnswerElement?.element.firstElementChild !== this.lastChosenAnswerCircle) {
       if (this.lastChosenAnswerCircle) {
         this.render.setStyle(this.lastChosenAnswerCircle, 'background-color', 'transparent')
+        this.render.setStyle(this.lastChosenAnswerCircle, 'border', '3px solid #79E8D8')
       }
-      this.lastChosenAnswerCircle = chosenAnswerElement?.element.firstElementChild
-      this.render.setStyle(this.lastChosenAnswerCircle, 'background-color', 'red')
+      if (chosenAnswerElement) {
+        this.lastChosenAnswerCircle = chosenAnswerElement?.element.firstElementChild
+        this.render.setStyle(this.lastChosenAnswerCircle, 'background-color', '#B53A57')
+        this.render.setStyle(this.lastChosenAnswerCircle, 'border', '3px solid #B53A57')
+        console.log(this.lastChosenAnswerCircle);
+      }
     }
 
   }

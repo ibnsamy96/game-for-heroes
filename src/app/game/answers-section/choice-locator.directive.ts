@@ -39,7 +39,6 @@ export class ChoiceLocator implements OnInit {
 
 
   @HostListener('cdkDragMoved') locationUpdated2() {
-    console.log(this.elementRef.nativeElement.getBoundingClientRect());
 
     const circleLeft = this.elementRef.nativeElement.getBoundingClientRect().left
     const circleTop = this.elementRef.nativeElement.getBoundingClientRect().top
@@ -47,9 +46,6 @@ export class ChoiceLocator implements OnInit {
     const circleHeight = this.elementRef.nativeElement.getBoundingClientRect().height
 
     const centerLocation = { xCord: 0, yCord: 0, diameter: 0, element: this.elementRef.nativeElement };
-
-    console.log(centerLocation);
-
 
     centerLocation.xCord = circleLeft + (circleWidth / 2)
     centerLocation.yCord = circleTop + (circleHeight / 2)
