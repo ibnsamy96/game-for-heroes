@@ -1,11 +1,29 @@
 <div class="container">
-  <app-answer class="answer" [answer]="{ text: 'نعم', state: true }" answerLocator (locationUpdate)="addAnswer($event)">
+  <app-answer
+    class="answer"
+    [answer]="{ text: 'نعم', state: true }"
+    answerLocator
+    (locationUpdate)="addAnswer($event)"
+  >
   </app-answer>
-  <app-choice choiceLocator #choice class="choice" cdkDragBoundary=".container"
-    (locationUpdateForTheLastTime)="checkLastChoiceLocation($event)" (locationUpdate)="checkChoiceLocation($event)"
-    cdkDrag>
+  <app-choice
+    choiceLocator
+    #choice
+    class="choice"
+    cdkDragBoundary=".container"
+    [innerText]="isOutOfAnswers ? 'اسحب' : ''"
+    (locationUpdateForTheLastTime)="checkLastChoiceLocation($event)"
+    (locationUpdate)="checkChoiceLocation($event)"
+    cdkDrag
+    id="choice-chooser"
+  >
   </app-choice>
-  <app-answer class="answer" [answer]="{ text: 'لا', state: true }" answerLocator (locationUpdate)="addAnswer($event)">
+  <app-answer
+    class="answer"
+    [answer]="{ text: 'لا', state: true }"
+    answerLocator
+    (locationUpdate)="addAnswer($event)"
+  >
   </app-answer>
 </div>
 <!--
